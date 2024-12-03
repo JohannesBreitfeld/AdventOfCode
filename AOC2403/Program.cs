@@ -1,5 +1,4 @@
 ﻿using System.Text.RegularExpressions;
-using System.Linq;
 
 var path = Path.Combine("..", "..", "..", "..", "input03.txt");
 
@@ -15,38 +14,17 @@ Console.WriteLine(total);
 
 static int Problem1(MatchCollection matches)
 {
-    int total = 0;
-    foreach (Match match in matches)
-    {
-        int X = int.Parse(match.Groups[1].Value);
-        int Y = int.Parse(match.Groups[2].Value);                     
-        total += X * Y;
-    }
-    return total;
+    return matches.Sum(match => int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value));
 }
 
 static int Problem2(MatchCollection matches)
 {
-    int total = 0;
-    bool mulEnabled = true; 
-
-    foreach (Match match in matches)
+    bool mulEnabled = true;
+    return matches.Aggregate(0, (total, match) =>
     {
-        if (match.Value == "do()")
-        {
-            mulEnabled = true;
-        }
-        else if (match.Value == "don't()")
-        {
-            mulEnabled = false;
-        }
-        else if (mulEnabled)
-        {
-            int X = int.Parse(match.Groups[1].Value);
-            int Y = int.Parse(match.Groups[2].Value);
-
-            total += X * Y;
-        }
-    }
-    return total;
+        if (match.Value == "do()") mulEnabled = true;
+        else if (match.Value == "don't()") mulEnabled = false;
+        else if (mulEnabled) return total += int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value);
+        return total;
+    });
 }
