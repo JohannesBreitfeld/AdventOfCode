@@ -1,4 +1,4 @@
-﻿var path = Path.Combine("..", "..", "..", "..", "input02.txt");
+﻿var path = Path.Combine("..", "..", "..", "..", "inputs", "input02.txt");
 string[] input = File.ReadAllLines(path);
 
 var reports = input

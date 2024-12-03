@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-var path = Path.Combine("..", "..", "..", "..", "Input01.txt");
+var path = Path.Combine("..", "..", "..", "..","inputs", "Input01.txt");
 String[] input = File.ReadAllLines(path);
 
 var left = input.Select(line => int.Parse(line.Substring(0, 5))).ToList();

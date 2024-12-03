@@ -1,6 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 
-var path = Path.Combine("..", "..", "..", "..", "input03.txt");
+var path = Path.Combine("..", "..", "..", "..","inputs", "input03.txt");
 
 string input = File.ReadAllText(path);
 var pattern1 = @"mul\((\d{1,3}),(\d{1,3})\)";
