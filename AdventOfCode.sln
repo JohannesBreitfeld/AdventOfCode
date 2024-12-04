@@ -16,10 +16,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inputs", "Inputs", "{858605
 		Inputs\Input01.txt = Inputs\Input01.txt
 		Inputs\Input02.txt = Inputs\Input02.txt
 		Inputs\Input03.txt = Inputs\Input03.txt
+		Input04.txt = Input04.txt
 		Inputs\Test01.txt = Inputs\Test01.txt
 		Inputs\Test02.txt = Inputs\Test02.txt
 		Inputs\Test03.txt = Inputs\Test03.txt
+		Test04.txt = Test04.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2404", "AOC2404\AOC2404.csproj", "{F95AA193-6527-4379-B959-0EB46816A719}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,10 @@ Global
 		{33BC2B87-E610-402E-A611-36005C52009D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33BC2B87-E610-402E-A611-36005C52009D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33BC2B87-E610-402E-A611-36005C52009D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F95AA193-6527-4379-B959-0EB46816A719}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95AA193-6527-4379-B959-0EB46816A719}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95AA193-6527-4379-B959-0EB46816A719}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95AA193-6527-4379-B959-0EB46816A719}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
