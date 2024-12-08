@@ -1,5 +1,7 @@
-﻿using System.Drawing;
-
+﻿using System.Diagnostics;
+using System.Drawing;
+Stopwatch stopwatch = new Stopwatch();
+stopwatch.Start();
 var path = Path.Combine("..", "..", "..", "..", "input06.txt");
 var input = File.ReadAllLines(path);
 
@@ -18,7 +20,8 @@ for (int i = 0; i < input.Length; i++)
 }
 
 Console.WriteLine(CountLoopPositions(map, visitedPositions, input));
-
+stopwatch.Stop();
+Console.WriteLine($"{stopwatch.ElapsedMilliseconds}");
 
 static (Point, int) GetStartPosition(string[] map)
 {
