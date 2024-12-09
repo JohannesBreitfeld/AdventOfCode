@@ -10,21 +10,21 @@ var antinodes = GetAntinodes2(antennas, cols, rows);
 
 Console.WriteLine(antinodes.Count);
 
-//for (int i = 0; i < rows; i++)
-//{
-//    for (int j = 0; j < cols; j++)
-//    {
-//        if(antinodes.Contains((j, i)))
-//        {
-//            Console.Write('#');
-//        }
-//        else
-//        {
-//            Console.Write('-');
-//        }
-//    }
-//    Console.WriteLine();
-//}
+for (int i = 0; i < rows; i++)
+{
+    for (int j = 0; j < cols; j++)
+    {
+        if (antinodes.Contains((j, i)))
+        {
+            Console.Write('#');
+        }
+        else
+        {
+            Console.Write('-');
+        }
+    }
+    Console.WriteLine();
+}
 
 static Dictionary<char, List<(int, int)>> GetAntennas(string[] map)
 {
