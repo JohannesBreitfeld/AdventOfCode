@@ -23,65 +23,94 @@ for (int i = 0; i < input.Length; i++)
     }
 }
 
-var files = new HashSet<(int fileId, int length, int startIndex)>();
-int currentFileId = 0;
+var problem1 = Problem1(diskMap);
+var problem2 = Problem2(diskMap);
 
-for (int i = 0; i < diskMap.Count; i++)
+Console.WriteLine($"Answer 1: {problem1}");
+Console.WriteLine($"Answer 2: {problem2}");
+
+static long Problem1(List<int> diskMap)
 {
-    if (diskMap[i] != -1)
+    int spaceIndex = diskMap.IndexOf(diskMap.First(x => x == -1));
+    int fileIndex = diskMap.LastIndexOf(diskMap.Last(x => x != -1));
+
+    while (spaceIndex < fileIndex)
     {
-        int length = 1;
-        while (i + 1 < diskMap.Count && diskMap[i + 1] == diskMap[i])
-        {
-            i++;
-            length++;
-        }
-        files.Add((currentFileId, length, i - length + 1)); 
-        currentFileId++;
+        diskMap[spaceIndex] = diskMap[fileIndex];
+        diskMap[fileIndex] = -1;
+       
+        spaceIndex = diskMap.IndexOf(diskMap.First(x => x == -1));
+        fileIndex = diskMap.LastIndexOf(diskMap.Last(x => x != -1));
     }
+
+    long checksum = 0;
+    for (int i = 0; i < diskMap.Count && diskMap[i] != -1; i++)
+    {
+        checksum += i * diskMap[i];
+    }
+    return checksum;
 }
 
-foreach (var file in files.OrderByDescending(f => f.fileId))
+static long Problem2(List<int> diskMap)
 {
-    int fileId = file.fileId;
-    int fileLength = file.length;
-    int originalStartIndex = file.startIndex; 
-    int freeSpaceStart = -1;
+    var files = new HashSet<(int fileId, int length, int startIndex)>();
+    int currentFileId = 0;
 
-    for (int i = 0; i < diskMap.Count - fileLength + 1; i++)
+    for (int i = 0; i < diskMap.Count; i++)
     {
-        if (diskMap.Skip(i).Take(fileLength).All(x => x == -1) && i <= originalStartIndex)
+        if (diskMap[i] != -1)
         {
-            freeSpaceStart = i;
-            break;
+            int length = 1;
+            while (i + 1 < diskMap.Count && diskMap[i + 1] == diskMap[i])
+            {
+                i++;
+                length++;
+            }
+            files.Add((currentFileId, length, i - length + 1));
+            currentFileId++;
         }
     }
 
-    if (freeSpaceStart != -1)
+    foreach (var file in files.OrderByDescending(f => f.fileId))
     {
-        for (int i = 0; i < diskMap.Count; i++)
+        int fileId = file.fileId;
+        int fileLength = file.length;
+        int originalStartIndex = file.startIndex;
+        int freeSpaceStart = -1;
+
+        for (int i = 0; i < diskMap.Count - fileLength + 1; i++)
         {
-            if (diskMap[i] == fileId)
+            if (diskMap.Skip(i).Take(fileLength).All(x => x == -1) && i <= originalStartIndex)
             {
-                diskMap[i] = -1;
+                freeSpaceStart = i;
+                break;
             }
         }
 
-        for (int i = freeSpaceStart; i < freeSpaceStart + fileLength; i++)
+        if (freeSpaceStart != -1)
         {
-            diskMap[i] = fileId;
+            for (int i = 0; i < diskMap.Count; i++)
+            {
+                if (diskMap[i] == fileId)
+                {
+                    diskMap[i] = -1;
+                }
+            }
+
+            for (int i = freeSpaceStart; i < freeSpaceStart + fileLength; i++)
+            {
+                diskMap[i] = fileId;
+            }
         }
     }
-}
 
-long checksum2 = 0;
-for (int i = 0; i < diskMap.Count; i++)
-{
-    if (diskMap[i] != -1) 
+    long checksum2 = 0;
+    for (int i = 0; i < diskMap.Count; i++)
     {
-        checksum2 += i * diskMap[i];
+        if (diskMap[i] != -1)
+        {
+            checksum2 += i * diskMap[i];
+        }
     }
+    return checksum2;
 }
-
-Console.WriteLine($"Checksum 2: {checksum2}");
-    
