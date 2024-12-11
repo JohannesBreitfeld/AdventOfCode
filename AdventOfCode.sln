@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inputs", "Inputs", "{858605
 		Input07.txt = Input07.txt
 		Input08.txt = Input08.txt
 		Input09.txt = Input09.txt
+		Input10.txt = Input10.txt
 		Inputs\Test01.txt = Inputs\Test01.txt
 		Inputs\Test02.txt = Inputs\Test02.txt
 		Inputs\Test03.txt = Inputs\Test03.txt
@@ -31,6 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Inputs", "Inputs", "{858605
 		Test07.txt = Test07.txt
 		Test08.txt = Test08.txt
 		Test09.txt = Test09.txt
+		Test10.txt = Test10.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2404", "AOC2404\AOC2404.csproj", "{F95AA193-6527-4379-B959-0EB46816A719}"
@@ -44,6 +46,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2408", "AOC2408\AOC2408.csproj", "{6DFF864A-C1E4-48C0-B377-CD8172398C76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2409", "AOC2409\AOC2409.csproj", "{2DA6A349-D6E3-4FC9-9FFD-32E305315F03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOC2410", "AOC2410\AOC2410.csproj", "{3EE2F7E0-0DD5-4956-98B0-E32602ACD5F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +91,10 @@ Global
 		{2DA6A349-D6E3-4FC9-9FFD-32E305315F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DA6A349-D6E3-4FC9-9FFD-32E305315F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DA6A349-D6E3-4FC9-9FFD-32E305315F03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EE2F7E0-0DD5-4956-98B0-E32602ACD5F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EE2F7E0-0DD5-4956-98B0-E32602ACD5F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EE2F7E0-0DD5-4956-98B0-E32602ACD5F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EE2F7E0-0DD5-4956-98B0-E32602ACD5F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
