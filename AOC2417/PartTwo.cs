@@ -11,10 +11,9 @@ namespace AOC2417
         {
             if (index == -1)
             {
-                bestA = Math.Min(bestA, A);
+                bestA = A;
                 return;
             }
-            var next = expectedOutput[index];
 
             for (ulong i = 0; i < 8; i++)
             {
@@ -25,7 +24,6 @@ namespace AOC2417
                     Solve(index - 1, nextA);
                 }
             }
-
         }
 
         public string Execute(ulong A)
