@@ -1,7 +1,13 @@
 ﻿using AOC2418;
 
-var partOne = new PartOne();
-Console.WriteLine(partOne.FindBestPath());
+//var partOne = new PartOne();
+//Console.WriteLine(partOne.FindBestPath());
+
+var partTwo = new PartTwo();
+
+var lastByte = partTwo.Solve();
+
+Console.WriteLine($"{lastByte.x},{lastByte.y}");
 
 
 //for (int i = 0; i < partOne.map.GetLength(0); i++)
