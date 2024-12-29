@@ -1,7 +1,7 @@
 ﻿using AOC2418;
 
-//var partOne = new PartOne();
-//Console.WriteLine(partOne.FindBestPath());
+var partOne = new PartOne();
+Console.WriteLine(partOne.FindBestPath());
 
 var partTwo = new PartTwo();
 

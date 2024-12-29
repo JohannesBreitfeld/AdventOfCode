@@ -84,7 +84,7 @@ internal class PartOne
                 {
                     continue;
                 }
-                visited.Add((newX, newY));
+                //visited.Add((newX, newY));
                 queue.Enqueue((newX, newY, steps + 1));
             }
         }
