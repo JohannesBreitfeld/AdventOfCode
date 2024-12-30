@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
-
-namespace AOC2418;
+﻿namespace AOC2418;
 
 internal class PartOne
 {
@@ -84,7 +77,7 @@ internal class PartOne
                 {
                     continue;
                 }
-                //visited.Add((newX, newY));
+                visited.Add((newX, newY));
                 queue.Enqueue((newX, newY, steps + 1));
             }
         }

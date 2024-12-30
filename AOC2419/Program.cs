@@ -1,5 +1,5 @@
 ﻿using AOC2419;
 
-var partOne = new PartOne();
-Console.WriteLine(partOne.Solve());
+var partTwo = new PartTwo();
+Console.WriteLine(partTwo.Solve());
 
