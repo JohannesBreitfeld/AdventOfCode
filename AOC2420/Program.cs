@@ -1,7 +1,7 @@
 ﻿using AOC2420;
 
-var partOne = new PartOne();
-Console.WriteLine(partOne.FindShortcuts());
+var partTwo = new PartTwo();
+Console.WriteLine(partTwo.FindShortcuts());
 
 //for (int i = 0; i < partOne.CostMap.GetLength(0); i++)
 //{
